@@ -32,6 +32,8 @@ hackmerlin-agent/
 ├── .env.example            # Environment template
 ├── requirements.txt        # Python dependencies
 ├── README.md              # Project overview
+├── demo_test.py            # Quick verification test
+├── quick_proof.py          # Concrete functionality proof
 ├── src/                   # Source code
 │   ├── final_solution.py  # Main agent
 │   ├── level7_cracker.py  # Level 7 specialist
@@ -77,11 +79,17 @@ This document covers:
 2. **Cost-Constrained Design**: Efficient approaches for limited budgets  
 3. **Unique Challenges**: Technical hurdles and solutions implemented
 
-## Demo
+## Demo & Testing
 
 ```bash
-# Quick demo - see it crack multiple levels
-python src/final_solution.py
+# Quick verification (30 seconds)
+python demo_test.py           # Verify setup and capabilities
+
+# Concrete proof of functionality  
+python quick_proof.py         # See actual agent in action
+
+# Full demonstration
+python src/final_solution.py  # Complete 7-level run
 
 # Expected output:
 # Level 1: SUCCESS - Password: MONKEY
