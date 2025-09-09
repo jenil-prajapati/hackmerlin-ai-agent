@@ -85,4 +85,4 @@ python mock_test.py
 
 ## **Next Steps:**
 
-Choose your approach and I'll help you configure it! 🚀 
+Choose your approach and I'll help you configure it! 

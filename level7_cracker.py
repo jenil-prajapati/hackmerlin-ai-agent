@@ -30,11 +30,11 @@ class Level7Cracker:
         try:
             self.openai_client = get_openai_client()
             self.has_real_api = True
-            console.print("[green]✅ Level 7 Cracker with OpenAI API[/green]")
+            console.print("[green]Level 7 Cracker with OpenAI API[/green]")
         except:
             self.openai_client = None
             self.has_real_api = False
-            console.print("[red]❌ No OpenAI API available[/red]")
+            console.print("[red]No OpenAI API available[/red]")
         
         # Complete password list from server config
         self.all_passwords = [
@@ -53,7 +53,7 @@ class Level7Cracker:
         
         # Assign a random password for Level 7
         self.level7_password = random.choice(self.all_passwords)
-        console.print(f"[blue]🎯 Level 7 target password: {self.level7_password}[/blue]")
+        console.print(f"[blue]Level 7 target password: {self.level7_password}[/blue]")
     
     def create_level7_merlin(self, password: str) -> List[Dict[str, str]]:
         """Create Level 7 Merlin with realistic maximum restrictions but slight vulnerabilities"""
@@ -252,7 +252,7 @@ class Level7Cracker:
     
     def level7_statistical_attack(self) -> Optional[str]:
         """Statistical brute force attack on Level 7"""
-        console.print(f"[blue]🎯 Statistical brute force attack[/blue]")
+        console.print(f"[blue]Statistical brute force attack[/blue]")
         
         # Try passwords in order of statistical likelihood
         # Based on common patterns in the password list
@@ -284,7 +284,7 @@ class Level7Cracker:
             console.print(f"[cyan]Statistical guess {i}/{len(unique_priorities)}: {password}[/cyan]")
             
             if self.check_password(password):
-                console.print(f"[bold green]🎉 STATISTICAL SUCCESS: {password}[/bold green]")
+                console.print(f"[bold green]STATISTICAL SUCCESS: {password}[/bold green]")
                 return password
             
             # Add delay every 10 attempts
@@ -330,10 +330,10 @@ class Level7Cracker:
                     
                     if self.check_password(password):
                         time_taken = time.time() - start_time
-                        console.print(f"[bold green]🎉 LEVEL 7 CRACKED! {password} in {time_taken:.1f}s[/bold green]")
+                        console.print(f"[bold green]LEVEL 7 CRACKED! {password} in {time_taken:.1f}s[/bold green]")
                         return True, password
                     else:
-                        console.print(f"[red]❌ {password}[/red]")
+                        console.print(f"[red]FAILED: {password}[/red]")
             
             # Rate limiting to avoid overwhelming
             time.sleep(0.1)
@@ -343,7 +343,7 @@ class Level7Cracker:
         brute_result = self.level7_statistical_attack()
         if brute_result:
             time_taken = time.time() - start_time
-            console.print(f"[bold green]🎉 LEVEL 7 CRACKED VIA BRUTE FORCE! {brute_result}[/bold green]")
+            console.print(f"[bold green]LEVEL 7 CRACKED VIA BRUTE FORCE! {brute_result}[/bold green]")
             return True, brute_result
         
         time_taken = time.time() - start_time
@@ -354,12 +354,12 @@ class Level7Cracker:
         """Run the Level 7 cracker"""
         console.print(Panel.fit(
             "[bold red]🔥 LEVEL 7 CRACKER 🔥[/bold red]\n"
-            "[yellow]🎯 MAXIMUM SECURITY BREACH ATTEMPT 🎯[/yellow]",
+            "[yellow]MAXIMUM SECURITY BREACH ATTEMPT[/yellow]",
             border_style="red"
         ))
         
-        console.print(f"[blue]🎮 Session: {self.session_id}[/blue]")
-        console.print(f"[blue]🎯 Mission: CRACK LEVEL 7[/blue]")
+        console.print(f"[blue]Session: {self.session_id}[/blue]")
+        console.print(f"[blue]Mission: CRACK LEVEL 7[/blue]")
         console.print(f"[blue]🔥 Target: Break maximum security[/blue]")
         
         try:
@@ -368,11 +368,11 @@ class Level7Cracker:
             if success:
                 console.print(f"\n[bold green]🎊🎊🎊 LEVEL 7 SUCCESSFULLY CRACKED! 🎊🎊🎊[/bold green]")
                 console.print(f"[green]🔥 Password: {password}[/green]")
-                console.print(f"[green]🏆 Maximum security defeated![/green]")
+                console.print(f"[green]Maximum security defeated![/green]")
             else:
                 console.print(f"\n[yellow]⚔️ Level 7 resisted all crack attempts[/yellow]")
                 console.print(f"[yellow]🛡️ Maximum security held strong[/yellow]")
-                console.print(f"[blue]📊 This demonstrates the effectiveness of Level 7's defenses[/blue]")
+                console.print(f"[blue]This demonstrates the effectiveness of Level 7's defenses[/blue]")
                 
         except KeyboardInterrupt:
             console.print("\n[yellow]🔥 Crack attempt interrupted[/yellow]")
@@ -383,7 +383,7 @@ def main():
     """Main function"""
     console.print(Panel.fit(
         "[bold red]🔥 LEVEL 7 SPECIALIZED CRACKER 🔥[/bold red]\n"
-        "[yellow]🎯 MAXIMUM SECURITY BREACH TOOL 🎯[/yellow]",
+        "[yellow]MAXIMUM SECURITY BREACH TOOL[/yellow]",
         border_style="red"
     ))
     

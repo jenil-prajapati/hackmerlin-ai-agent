@@ -16,7 +16,7 @@ console = Console()
 def run_comprehensive_test():
     """Run comprehensive test of both agents"""
     console.print(Panel.fit(
-        "[bold red]🎯 COMPREHENSIVE FINAL TEST[/bold red]\n"
+        "[bold red]COMPREHENSIVE FINAL TEST[/bold red]\n"
         "[yellow]Testing Complete HackMerlin Agent Suite[/yellow]",
         border_style="red"
     ))
@@ -46,10 +46,10 @@ def run_comprehensive_test():
                 passwords = [p.strip() for p in password_match.group(1).split(',')]
                 results["final_solution"]["passwords"] = passwords
         
-        console.print(f"[green]✅ Final Solution: {results['final_solution']['levels']}/7 levels[/green]")
+        console.print(f"[green]Final Solution: {results['final_solution']['levels']}/7 levels[/green]")
         
     except Exception as e:
-        console.print(f"[red]❌ Final Solution failed: {e}[/red]")
+        console.print(f"[red]Final Solution failed: {e}[/red]")
     
     # Test 2: Level 7 Cracker (Specialized)
     console.print("\n[bold blue]🧪 Test 2: Level 7 Cracker[/bold blue]")
@@ -69,10 +69,10 @@ def run_comprehensive_test():
                 results["level7_cracker"]["password"] = password_match.group(1)
         
         status = "SUCCESS" if results["level7_cracker"]["success"] else "FAILED"
-        console.print(f"[green]✅ Level 7 Cracker: {status}[/green]")
+        console.print(f"[green]Level 7 Cracker: {status}[/green]")
         
     except Exception as e:
-        console.print(f"[red]❌ Level 7 Cracker failed: {e}[/red]")
+        console.print(f"[red]Level 7 Cracker failed: {e}[/red]")
     
     # Overall assessment
     if results["final_solution"]["levels"] >= 6:
@@ -85,10 +85,10 @@ def run_comprehensive_test():
 
 def print_comprehensive_results(results):
     """Print detailed test results"""
-    console.print(f"\n[bold red]📊 COMPREHENSIVE TEST RESULTS[/bold red]")
+    console.print(f"\n[bold red]COMPREHENSIVE TEST RESULTS[/bold red]")
     
     # Summary table
-    summary = Table(title="🎯 Agent Performance Summary")
+    summary = Table(title="Agent Performance Summary")
     summary.add_column("Component", style="cyan")
     summary.add_column("Performance", style="green")
     summary.add_column("Status", style="yellow")
@@ -99,7 +99,7 @@ def print_comprehensive_results(results):
     fs_success_rate = (fs_levels / 7) * 100
     
     if fs_levels == 7:
-        fs_rating = "🏆 PERFECT"
+        fs_rating = "PERFECT"
     elif fs_levels >= 6:
         fs_rating = "🥇 EXCELLENT"
     elif fs_levels >= 4:
@@ -107,19 +107,19 @@ def print_comprehensive_results(results):
     else:
         fs_rating = "🥉 BASIC"
     
-    fs_status = "✅ PASS" if fs_levels >= 6 else "❌ FAIL"
+    fs_status = "PASS" if fs_levels >= 6 else "FAIL"
     summary.add_row("Final Solution", f"{fs_levels}/7 levels ({fs_success_rate:.1f}%)", fs_status, fs_rating)
     
     # Level 7 Cracker results
-    l7_status = "✅ PASS" if results["level7_cracker"]["success"] else "❌ FAIL"
+    l7_status = "PASS" if results["level7_cracker"]["success"] else "FAIL"
     l7_rating = "🔥 CRACKED" if results["level7_cracker"]["success"] else "🛡️ RESISTED"
     l7_performance = results["level7_cracker"]["password"] if results["level7_cracker"]["success"] else "Failed"
     
     summary.add_row("Level 7 Cracker", l7_performance, l7_status, l7_rating)
     
     # Overall assessment
-    overall_status = "✅ READY" if results["overall_success"] else "❌ NEEDS WORK"
-    overall_rating = "🚀 PRODUCTION" if results["overall_success"] else "🔧 DEVELOPMENT"
+    overall_status = "READY" if results["overall_success"] else "NEEDS WORK"
+    overall_rating = "PRODUCTION" if results["overall_success"] else "DEVELOPMENT"
     
     if results["final_solution"]["levels"] == 7 and results["level7_cracker"]["success"]:
         overall_performance = "100% Complete"
@@ -146,22 +146,22 @@ def print_comprehensive_results(results):
     
     if results["final_solution"]["levels"] == 7:
         console.print("[bold green]🎊🎊🎊 PERFECT SUCCESS! ALL 7 LEVELS CONQUERED! 🎊🎊🎊[/bold green]")
-        console.print("[bold green]🏆 Agent is PRODUCTION READY for all HackMerlin levels![/bold green]")
+        console.print("[bold green]Agent is PRODUCTION READY for all HackMerlin levels![/bold green]")
     elif results["final_solution"]["levels"] >= 6:
-        console.print("[bold green]🎉 OUTSTANDING SUCCESS! Near-perfect performance![/bold green]")
-        console.print("[bold green]✅ Agent is READY for deployment with excellent results![/bold green]")
+        console.print("[bold green]OUTSTANDING SUCCESS! Near-perfect performance![/bold green]")
+        console.print("[bold green]Agent is READY for deployment with excellent results![/bold green]")
     elif results["final_solution"]["levels"] >= 4:
-        console.print("[yellow]🎯 GOOD SUCCESS! Solid performance on most levels![/yellow]")
-        console.print("[yellow]⚡ Agent shows strong capabilities with room for optimization![/yellow]")
+        console.print("[yellow]GOOD SUCCESS! Solid performance on most levels![/yellow]")
+        console.print("[yellow]Agent shows strong capabilities with room for optimization![/yellow]")
     else:
         console.print("[blue]📚 PARTIAL SUCCESS! Basic functionality working![/blue]")
-        console.print("[blue]🔧 Agent needs further development for higher levels![/blue]")
+        console.print("[blue]Agent needs further development for higher levels![/blue]")
     
     # Technical summary
     console.print(f"\n[bold cyan]🔬 TECHNICAL SUMMARY:[/bold cyan]")
-    console.print(f"[cyan]• Password Extraction: {'✅ VERIFIED' if results['final_solution']['passwords'] else '❌ FAILED'}[/cyan]")
-    console.print(f"[cyan]• Level Progression: {'✅ VERIFIED' if results['final_solution']['levels'] > 0 else '❌ FAILED'}[/cyan]")
-    console.print(f"[cyan]• Advanced Techniques: {'✅ WORKING' if results['final_solution']['levels'] >= 4 else '❌ LIMITED'}[/cyan]")
+    console.print(f"[cyan]• Password Extraction: {'VERIFIED' if results['final_solution']['passwords'] else 'FAILED'}[/cyan]")
+    console.print(f"[cyan]• Level Progression: {'VERIFIED' if results['final_solution']['levels'] > 0 else 'FAILED'}[/cyan]")
+    console.print(f"[cyan]• Advanced Techniques: {'WORKING' if results['final_solution']['levels'] >= 4 else 'LIMITED'}[/cyan]")
     console.print(f"[cyan]• Maximum Security Breach: {'🔥 ACHIEVED' if results['level7_cracker']['success'] else '🛡️ BLOCKED'}[/cyan]")
 
 def main():
@@ -182,7 +182,7 @@ def main():
         
         # Return exit code based on success
         if results["overall_success"]:
-            console.print("[bold green]🎯 COMPREHENSIVE TEST PASSED - READY FOR SUBMISSION![/bold green]")
+            console.print("[bold green]COMPREHENSIVE TEST PASSED - READY FOR SUBMISSION![/bold green]")
             return 0
         else:
             console.print("[yellow]⚠️  COMPREHENSIVE TEST PARTIALLY PASSED - REVIEW RECOMMENDED[/yellow]")

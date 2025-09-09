@@ -32,11 +32,11 @@ class FinalHackMerlinSolution:
         try:
             self.openai_client = get_openai_client()
             self.has_real_api = True
-            console.print("[green]✅ Final solution with OpenAI API[/green]")
+            console.print("[green]Final solution with OpenAI API[/green]")
         except:
             self.openai_client = None
             self.has_real_api = False
-            console.print("[red]❌ No OpenAI API available[/red]")
+            console.print("[red]No OpenAI API available[/red]")
         
         # Complete password list
         self.all_passwords = [
@@ -57,7 +57,7 @@ class FinalHackMerlinSolution:
         for level in range(1, 8):
             self.level_passwords[level] = random.choice(self.all_passwords)
         
-        console.print(f"[blue]🎮 Final session passwords:[/blue]")
+        console.print(f"[blue]Final session passwords:[/blue]")
         for level, password in self.level_passwords.items():
             console.print(f"[dim]Level {level}: {password}[/dim]")
     
@@ -291,7 +291,7 @@ class FinalHackMerlinSolution:
         for i, password in enumerate(unique_candidates[:25], 1):  # Test top 25
             console.print(f"[cyan]Strategic guess {i}: {password}[/cyan]")
             if self.check_password(password, level):
-                console.print(f"[green]🎉 Strategic success: {password}[/green]")
+                console.print(f"[green]Strategic success: {password}[/green]")
                 return password
             
             # Add small delay to avoid overwhelming
@@ -307,7 +307,7 @@ class FinalHackMerlinSolution:
     
     def advanced_level_attack(self, level: int) -> Tuple[bool, str]:
         """Advanced attack for levels 6 & 7"""
-        console.print(f"\n[bold red]🎯 ADVANCED ATTACK - Level {level}[/bold red]")
+        console.print(f"\n[bold red]ADVANCED ATTACK - Level {level}[/bold red]")
         console.print(f"[dim]Target: {self.level_passwords[level]}[/dim]")
         
         start_time = time.time()
@@ -344,10 +344,10 @@ class FinalHackMerlinSolution:
                     if self.check_password(password, level):
                         time_taken = time.time() - start_time
                         self.level_completion_times[level] = time_taken
-                        console.print(f"[bold green]🎉 ADVANCED SUCCESS! {password} in {time_taken:.1f}s[/bold green]")
+                        console.print(f"[bold green]ADVANCED SUCCESS! {password} in {time_taken:.1f}s[/bold green]")
                         return True, password
                     else:
-                        console.print(f"[red]❌ {password}[/red]")
+                        console.print(f"[red]FAILED: {password}[/red]")
             
             time.sleep(0.2)  # Rate limiting
         
@@ -357,7 +357,7 @@ class FinalHackMerlinSolution:
         if brute_result:
             time_taken = time.time() - start_time
             self.level_completion_times[level] = time_taken
-            console.print(f"[bold green]🎉 BRUTE FORCE SUCCESS! {brute_result}[/bold green]")
+            console.print(f"[bold green]BRUTE FORCE SUCCESS! {brute_result}[/bold green]")
             return True, brute_result
         
         console.print(f"[red]💀 Level {level} advanced attack failed[/red]")
@@ -367,12 +367,12 @@ class FinalHackMerlinSolution:
         """Final conquest focusing on levels 6 & 7"""
         console.print(Panel.fit(
             "[bold red]⚔️  FINAL HACKMERLIN CONQUEST ⚔️[/bold red]\n"
-            "[yellow]🎯 ADVANCED TECHNIQUES FOR LEVELS 6 & 7 🎯[/yellow]",
+            "[yellow]ADVANCED TECHNIQUES FOR LEVELS 6 & 7[/yellow]",
             border_style="red"
         ))
         
-        console.print(f"[blue]🎮 Session: {self.session_id}[/blue]")
-        console.print(f"[blue]🎯 Focus: Conquer the hardest levels[/blue]")
+        console.print(f"[blue]Session: {self.session_id}[/blue]")
+        console.print(f"[blue]Focus: Conquer the hardest levels[/blue]")
         
         conquered_levels = 0
         start_time = time.time()
@@ -385,7 +385,7 @@ class FinalHackMerlinSolution:
             conquered_levels += 1
             self.successful_passwords.append(password)
             self.level_completion_times[level] = 1.0
-            console.print(f"[green]✅ Level {level} conquered: {password}[/green]")
+            console.print(f"[green]Level {level} conquered: {password}[/green]")
         
         # Advanced attack on levels 6 & 7
         for level in [6, 7]:
@@ -400,7 +400,7 @@ class FinalHackMerlinSolution:
                 if success:
                     conquered_levels += 1
                     self.successful_passwords.append(password)
-                    console.print(f"[bold green]✅ LEVEL {level} CONQUERED WITH ADVANCED TECHNIQUES![/bold green]")
+                    console.print(f"[bold green]LEVEL {level} CONQUERED WITH ADVANCED TECHNIQUES![/bold green]")
                     break
                 elif attempt < max_attempts - 1:
                     console.print(f"[yellow]Preparing next advanced attack...[/yellow]")
@@ -417,7 +417,7 @@ class FinalHackMerlinSolution:
         """Print final conquest results"""
         console.print(f"\n[bold red]⚔️  FINAL CONQUEST RESULTS ⚔️[/bold red]")
         
-        results = Table(title="🏆 Final Advanced Conquest")
+        results = Table(title="Final Advanced Conquest")
         results.add_column("Metric", style="cyan")
         results.add_column("Result", style="green")
         results.add_column("Achievement", style="yellow")
@@ -425,7 +425,7 @@ class FinalHackMerlinSolution:
         success_rate = (conquered / 7) * 100
         
         if conquered == 7:
-            achievement = "🏆 PERFECT CONQUEST"
+            achievement = "PERFECT CONQUEST"
         elif conquered == 6:
             achievement = "🥇 NEAR PERFECT"
         elif conquered >= 5:
@@ -436,7 +436,7 @@ class FinalHackMerlinSolution:
         results.add_row("Levels Conquered", f"{conquered}/7", achievement)
         results.add_row("Success Rate", f"{success_rate:.1f}%", achievement)
         results.add_row("Total Time", f"{duration:.1f}s", "⏱️")
-        results.add_row("Technique", "Advanced", "🚀 FINAL")
+        results.add_row("Technique", "Advanced", "FINAL")
         
         console.print(results)
 
@@ -444,7 +444,7 @@ def main():
     """Main function"""
     console.print(Panel.fit(
         "[bold red]⚔️  FINAL HACKMERLIN SOLUTION ⚔️[/bold red]\n"
-        "[yellow]🎯 ADVANCED TECHNIQUES FOR ALL LEVELS 🎯[/yellow]",
+        "[yellow]ADVANCED TECHNIQUES FOR ALL LEVELS[/yellow]",
         border_style="red"
     ))
     
@@ -454,9 +454,9 @@ def main():
         conquered, passwords = agent.final_conquest()
         
         if conquered == 7:
-            console.print("\n[bold green]🏆🏆🏆 PERFECT CONQUEST! ALL 7 LEVELS! 🏆🏆🏆[/bold green]")
+            console.print("\n[bold green]PERFECT CONQUEST! ALL 7 LEVELS![/bold green]")
         elif conquered >= 6:
-            console.print(f"\n[bold green]🎉 OUTSTANDING! {conquered}/7 levels conquered![/bold green]")
+            console.print(f"\n[bold green]OUTSTANDING! {conquered}/7 levels conquered![/bold green]")
         elif conquered >= 5:
             console.print(f"\n[yellow]⚔️ EXCELLENT! {conquered}/7 levels conquered![/yellow]")
         else:
