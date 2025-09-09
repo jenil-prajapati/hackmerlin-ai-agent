@@ -19,17 +19,35 @@ cp .env.example .env
 # Edit .env and add: OPENAI_API_KEY=sk-your-key-here
 
 # 3. Run the agent
-python final_solution.py        # Main agent (all levels)
-python level7_cracker.py        # Level 7 specialist 
-python comprehensive_test.py    # Full verification
+python src/final_solution.py        # Main agent (all levels)
+python src/level7_cracker.py        # Level 7 specialist 
+python src/comprehensive_test.py    # Full verification
 ```
 
-## Key Files
+## Project Structure
 
-- **`final_solution.py`** - Main agent (handles levels 1-7)
-- **`level7_cracker.py`** - Specialized Level 7 cracker  
-- **`advanced_strategies.py`** - 100+ attack strategies library
-- **`comprehensive_test.py`** - Complete testing suite
+```
+hackmerlin-agent/
+├── .env                     # API credentials (not in git)
+├── .env.example            # Environment template
+├── requirements.txt        # Python dependencies
+├── README.md              # Project overview
+├── src/                   # Source code
+│   ├── final_solution.py  # Main agent
+│   ├── level7_cracker.py  # Level 7 specialist
+│   ├── comprehensive_test.py # Testing suite
+│   ├── advanced_strategies.py # Attack library
+│   └── openai_adapter.py  # API integration
+└── docs/                  # Documentation
+    └── SETUP_CREDENTIALS.md # API setup guide
+```
+
+## Key Components
+
+- **`src/final_solution.py`** - Main agent (handles levels 1-7)
+- **`src/level7_cracker.py`** - Specialized Level 7 cracker  
+- **`src/advanced_strategies.py`** - 100+ attack strategies library
+- **`src/comprehensive_test.py`** - Complete testing suite
 
 ## Technical Achievements
 
@@ -63,7 +81,7 @@ This document covers:
 
 ```bash
 # Quick demo - see it crack multiple levels
-python final_solution.py
+python src/final_solution.py
 
 # Expected output:
 # Level 1: SUCCESS - Password: MONKEY
