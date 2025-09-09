@@ -30,7 +30,7 @@ def run_comprehensive_test():
     # Test 1: Final Solution (Levels 1-7)
     console.print("\n[bold blue]🧪 Test 1: Final Solution Agent[/bold blue]")
     try:
-        result = subprocess.run(['python', 'final_solution.py'], 
+        result = subprocess.run(['python', 'src/final_solution.py'], 
                               capture_output=True, text=True, timeout=120)
         
         output = result.stdout
@@ -54,7 +54,7 @@ def run_comprehensive_test():
     # Test 2: Level 7 Cracker (Specialized)
     console.print("\n[bold blue]🧪 Test 2: Level 7 Cracker[/bold blue]")
     try:
-        result = subprocess.run(['python', 'level7_cracker.py'], 
+        result = subprocess.run(['python', 'src/level7_cracker.py'], 
                               capture_output=True, text=True, timeout=120)
         
         output = result.stdout
